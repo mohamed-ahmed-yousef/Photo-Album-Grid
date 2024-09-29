@@ -9,4 +9,12 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules: ['@nuxtjs/apollo'],
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: 'https://graphqlzero.almansi.me/api'
+      }
+    },
+  },
 })
