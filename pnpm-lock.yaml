@@ -8,9 +8,12 @@ importers:
 
   .:
     dependencies:
+      lefthook:
+        specifier: ^1.7.17
+        version: 1.7.17
       nuxt:
         specifier: ^3.13.0
-        version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@22.7.4)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.22.5)(terser@5.34.1)(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1))
+        version: 3.13.2(@biomejs/biome@1.9.2)(@parcel/watcher@2.4.1)(@types/node@22.7.4)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.22.5)(terser@5.34.1)(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1))
       vue:
         specifier: latest
         version: 3.5.10
@@ -18,6 +21,9 @@ importers:
         specifier: latest
         version: 4.4.5(vue@3.5.10)
     devDependencies:
+      '@biomejs/biome':
+        specifier: 1.9.2
+        version: 1.9.2
       '@nuxtjs/apollo':
         specifier: 5.0.0-alpha.14
         version: 5.0.0-alpha.14(magicast@0.3.5)(rollup@4.22.5)(vue@3.5.10)
@@ -209,6 +215,59 @@ packages:
   '@babel/types@7.25.6':
     resolution: {integrity: sha512-/l42B1qxpG6RdfYf343Uw1vmDjeNhneUXtzhojE7pDgfpEypmRhI6j1kr17XCVv4Cgl9HdAiQY2x0GwKm7rWCw==}
     engines: {node: '>=6.9.0'}
+
+  '@biomejs/biome@1.9.2':
+    resolution: {integrity: sha512-4j2Gfwft8Jqp1X0qLYvK4TEy4xhTo4o6rlvJPsjPeEame8gsmbGQfOPBkw7ur+7/Z/f0HZmCZKqbMvR7vTXQYQ==}
+    engines: {node: '>=14.21.3'}
+    hasBin: true
+
+  '@biomejs/cli-darwin-arm64@1.9.2':
+    resolution: {integrity: sha512-rbs9uJHFmhqB3Td0Ro+1wmeZOHhAPTL3WHr8NtaVczUmDhXkRDWScaxicG9+vhSLj1iLrW47itiK6xiIJy6vaA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@biomejs/cli-darwin-x64@1.9.2':
+    resolution: {integrity: sha512-BlfULKijNaMigQ9GH9fqJVt+3JTDOSiZeWOQtG/1S1sa8Lp046JHG3wRJVOvekTPL9q/CNFW1NVG8J0JN+L1OA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@biomejs/cli-linux-arm64-musl@1.9.2':
+    resolution: {integrity: sha512-ZATvbUWhNxegSALUnCKWqetTZqrK72r2RsFD19OK5jXDj/7o1hzI1KzDNG78LloZxftrwr3uI9SqCLh06shSZw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-arm64@1.9.2':
+    resolution: {integrity: sha512-T8TJuSxuBDeQCQzxZu2o3OU4eyLumTofhCxxFd3+aH2AEWVMnH7Z/c3QP1lHI5RRMBP9xIJeMORqDQ5j+gVZzw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64-musl@1.9.2':
+    resolution: {integrity: sha512-CjPM6jT1miV5pry9C7qv8YJk0FIZvZd86QRD3atvDgfgeh9WQU0k2Aoo0xUcPdTnoz0WNwRtDicHxwik63MmSg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64@1.9.2':
+    resolution: {integrity: sha512-T0cPk3C3Jr2pVlsuQVTBqk2qPjTm8cYcTD9p/wmR9MeVqui1C/xTVfOIwd3miRODFMrJaVQ8MYSXnVIhV9jTjg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-win32-arm64@1.9.2':
+    resolution: {integrity: sha512-2x7gSty75bNIeD23ZRPXyox6Z/V0M71ObeJtvQBhi1fgrvPdtkEuw7/0wEHg6buNCubzOFuN9WYJm6FKoUHfhg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@biomejs/cli-win32-x64@1.9.2':
+    resolution: {integrity: sha512-JC3XvdYcjmu1FmAehVwVV0SebLpeNTnO2ZaMdGCSOdS7f8O9Fq14T2P1gTG1Q29Q8Dt1S03hh0IdVpIZykOL8g==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [win32]
 
   '@cloudflare/kv-asset-handler@0.3.4':
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
@@ -2129,6 +2188,60 @@ packages:
     resolution: {integrity: sha512-b94GiNHQNy6JNTrt5w6zNyffMrNkXZb3KTkCZJb2V1xaEGCk093vkZ2jk3tpaeP33/OiXC+WvK9AxUebnf5nbw==}
     engines: {node: '>= 0.6.3'}
 
+  lefthook-darwin-arm64@1.7.17:
+    resolution: {integrity: sha512-SR9nbYydecL1OMqZCFNbr0L0RXSJXlNbYK6QBJGlGiOuhnliRHJ45wrmnOY/LLYfcc7g9S2QGvMF4X42qmpSnQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  lefthook-darwin-x64@1.7.17:
+    resolution: {integrity: sha512-hGhqKxuFEcI9nHM2maR6cn/VmTp1OtkkN/GKYxEJ6xmo5Qz5GeeSbG0oJ7AhdGNAuEgj8JN/z0qeir6l7jAaZg==}
+    cpu: [x64]
+    os: [darwin]
+
+  lefthook-freebsd-arm64@1.7.17:
+    resolution: {integrity: sha512-ZTKDb1GIsaZn4guUMcohQSfpWQClt3o2oOjGPoqxHm9Sq5+K7EMzETdjtV+hz528UI6j/oaKoNnw7U6mx/BiVA==}
+    cpu: [arm64]
+    os: [freebsd]
+
+  lefthook-freebsd-x64@1.7.17:
+    resolution: {integrity: sha512-4Hn7cceYCm1e9oB0St0OAiQ/r4u2w1wvcoMyNPlynJiD/xL/N5vd9gpSzgGp07zoHrBiz9UaT2xyg9O4RNaQ/g==}
+    cpu: [x64]
+    os: [freebsd]
+
+  lefthook-linux-arm64@1.7.17:
+    resolution: {integrity: sha512-Y3YuvWpaWd7vUG11bTAdEVAeCZxW3EDzKxGkpUPeITSRLKpf/G3n1MCUSv+IqstVYq6T+idBizEDj0ZCfVESMQ==}
+    cpu: [arm64]
+    os: [linux]
+
+  lefthook-linux-x64@1.7.17:
+    resolution: {integrity: sha512-UaT6jARLx1vCeNe+S9/NsOJd5jRuU3JPkIvDD3QZQ1Yy1p0C+LbqeNjAYCkvYs9Gr2yvHNsPVvCBWej7/1EO8A==}
+    cpu: [x64]
+    os: [linux]
+
+  lefthook-openbsd-arm64@1.7.17:
+    resolution: {integrity: sha512-QeEIDXHUQm7eoIEcUACNVfIW/5oUw2Mia7RXs5tBUJHxdWumtnMi9P/gpZZyeNkiN5EGI1MNNm3UD88f/Cz0SA==}
+    cpu: [arm64]
+    os: [openbsd]
+
+  lefthook-openbsd-x64@1.7.17:
+    resolution: {integrity: sha512-lFXWh/5m+OlY+Uk/YB7y2wKTVPu6CQi3Gr4+m+nbhK07JR3gUI1+0jXvDLO9Y8U1n8RMJxM41R3Fspitf+MFUQ==}
+    cpu: [x64]
+    os: [openbsd]
+
+  lefthook-windows-arm64@1.7.17:
+    resolution: {integrity: sha512-xsDZhzFUdd0ScAjx9dvnyge5QUELNPpk8dTT2QeS04SiAPRIFpiNMJYVTEns7UI78x3HDeTduiYwF0WoPtKgTg==}
+    cpu: [arm64]
+    os: [win32]
+
+  lefthook-windows-x64@1.7.17:
+    resolution: {integrity: sha512-gMEJn5xabAJoXPDRfzcIbNz5WrVzmLrRc7X+b6MmUYFiPCYvs4ZpausZPq0qQ/8kdwkZVXuunrwWgCtXXBosZw==}
+    cpu: [x64]
+    os: [win32]
+
+  lefthook@1.7.17:
+    resolution: {integrity: sha512-1oQO4wqTB1kEWRxImGCqzp+nqIhV8CRxdAj3AMvSOkrNVkUZHLyB8o4EGl7Os+6+2iRKY94WaBXZDaTi210DXA==}
+    hasBin: true
+
   lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
     engines: {node: '>=10'}
@@ -3679,6 +3792,41 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
+  '@biomejs/biome@1.9.2':
+    optionalDependencies:
+      '@biomejs/cli-darwin-arm64': 1.9.2
+      '@biomejs/cli-darwin-x64': 1.9.2
+      '@biomejs/cli-linux-arm64': 1.9.2
+      '@biomejs/cli-linux-arm64-musl': 1.9.2
+      '@biomejs/cli-linux-x64': 1.9.2
+      '@biomejs/cli-linux-x64-musl': 1.9.2
+      '@biomejs/cli-win32-arm64': 1.9.2
+      '@biomejs/cli-win32-x64': 1.9.2
+
+  '@biomejs/cli-darwin-arm64@1.9.2':
+    optional: true
+
+  '@biomejs/cli-darwin-x64@1.9.2':
+    optional: true
+
+  '@biomejs/cli-linux-arm64-musl@1.9.2':
+    optional: true
+
+  '@biomejs/cli-linux-arm64@1.9.2':
+    optional: true
+
+  '@biomejs/cli-linux-x64-musl@1.9.2':
+    optional: true
+
+  '@biomejs/cli-linux-x64@1.9.2':
+    optional: true
+
+  '@biomejs/cli-win32-arm64@1.9.2':
+    optional: true
+
+  '@biomejs/cli-win32-x64@1.9.2':
+    optional: true
+
   '@cloudflare/kv-asset-handler@0.3.4':
     dependencies:
       mime: 3.0.0
@@ -4126,7 +4274,7 @@ snapshots:
       - supports-color
       - webpack-sources
 
-  '@nuxt/vite-builder@3.13.2(@types/node@22.7.4)(magicast@0.3.5)(rollup@4.22.5)(terser@5.34.1)(vue@3.5.10)':
+  '@nuxt/vite-builder@3.13.2(@biomejs/biome@1.9.2)(@types/node@22.7.4)(magicast@0.3.5)(rollup@4.22.5)(terser@5.34.1)(vue@3.5.10)':
     dependencies:
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.22.5)
       '@rollup/plugin-replace': 5.0.7(rollup@4.22.5)
@@ -4159,7 +4307,7 @@ snapshots:
       unplugin: 1.14.1
       vite: 5.4.8(@types/node@22.7.4)(terser@5.34.1)
       vite-node: 2.1.1(@types/node@22.7.4)(terser@5.34.1)
-      vite-plugin-checker: 0.8.0(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1))
+      vite-plugin-checker: 0.8.0(@biomejs/biome@1.9.2)(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1))
       vue: 3.5.10
       vue-bundle-renderer: 2.1.1
     transitivePeerDependencies:
@@ -5627,6 +5775,49 @@ snapshots:
     dependencies:
       readable-stream: 2.3.8
 
+  lefthook-darwin-arm64@1.7.17:
+    optional: true
+
+  lefthook-darwin-x64@1.7.17:
+    optional: true
+
+  lefthook-freebsd-arm64@1.7.17:
+    optional: true
+
+  lefthook-freebsd-x64@1.7.17:
+    optional: true
+
+  lefthook-linux-arm64@1.7.17:
+    optional: true
+
+  lefthook-linux-x64@1.7.17:
+    optional: true
+
+  lefthook-openbsd-arm64@1.7.17:
+    optional: true
+
+  lefthook-openbsd-x64@1.7.17:
+    optional: true
+
+  lefthook-windows-arm64@1.7.17:
+    optional: true
+
+  lefthook-windows-x64@1.7.17:
+    optional: true
+
+  lefthook@1.7.17:
+    optionalDependencies:
+      lefthook-darwin-arm64: 1.7.17
+      lefthook-darwin-x64: 1.7.17
+      lefthook-freebsd-arm64: 1.7.17
+      lefthook-freebsd-x64: 1.7.17
+      lefthook-linux-arm64: 1.7.17
+      lefthook-linux-x64: 1.7.17
+      lefthook-openbsd-arm64: 1.7.17
+      lefthook-openbsd-x64: 1.7.17
+      lefthook-windows-arm64: 1.7.17
+      lefthook-windows-x64: 1.7.17
+
   lilconfig@2.1.0: {}
 
   lilconfig@3.1.2: {}
@@ -5909,14 +6100,14 @@ snapshots:
 
   nuxi@3.14.0: {}
 
-  nuxt@3.13.2(@parcel/watcher@2.4.1)(@types/node@22.7.4)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.22.5)(terser@5.34.1)(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1)):
+  nuxt@3.13.2(@biomejs/biome@1.9.2)(@parcel/watcher@2.4.1)(@types/node@22.7.4)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.22.5)(terser@5.34.1)(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1)):
     dependencies:
       '@nuxt/devalue': 2.0.2
       '@nuxt/devtools': 1.5.1(rollup@4.22.5)(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1))(vue@3.5.10)
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.22.5)
       '@nuxt/schema': 3.13.2(rollup@4.22.5)
       '@nuxt/telemetry': 2.6.0(magicast@0.3.5)(rollup@4.22.5)
-      '@nuxt/vite-builder': 3.13.2(@types/node@22.7.4)(magicast@0.3.5)(rollup@4.22.5)(terser@5.34.1)(vue@3.5.10)
+      '@nuxt/vite-builder': 3.13.2(@biomejs/biome@1.9.2)(@types/node@22.7.4)(magicast@0.3.5)(rollup@4.22.5)(terser@5.34.1)(vue@3.5.10)
       '@unhead/dom': 1.11.7
       '@unhead/shared': 1.11.7
       '@unhead/ssr': 1.11.7
@@ -6917,7 +7108,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-checker@0.8.0(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1)):
+  vite-plugin-checker@0.8.0(@biomejs/biome@1.9.2)(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1)):
     dependencies:
       '@babel/code-frame': 7.24.7
       ansi-escapes: 4.3.2
@@ -6934,6 +7125,8 @@ snapshots:
       vscode-languageserver: 7.0.0
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.0.8
+    optionalDependencies:
+      '@biomejs/biome': 1.9.2
 
   vite-plugin-inspect@0.8.7(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.22.5))(rollup@4.22.5)(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1)):
     dependencies:
