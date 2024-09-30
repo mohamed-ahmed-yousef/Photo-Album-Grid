@@ -1,8 +1,8 @@
 <script setup>
 import { ref, watchEffect } from "vue";
 import { useRoute } from "vue-router";
-import { useGetAlbum } from "~/composables/album";
-import AlbumCard from "~/pages/_components/AlbumCard.vue";
+import { useGetAlbum } from "~/graphql/album";
+import AlbumCard from "~/pages/_components/AlbumDetails.vue";
 import Loading from "~/pages/_components/Loading.vue";
 import NotFound from "~/pages/_components/NotFound.vue";
 

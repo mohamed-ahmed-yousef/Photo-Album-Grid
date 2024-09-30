@@ -42,14 +42,14 @@ This project utilizes Tailwind CSS for styling. Key customizations include:
 
 3. Hover effects:
    - Scale transform: `hover:scale-105`
-   - Opacity changes: `hover:opacity-100`
+   - Background color change: `hover:bg-gray-700`
 
 ## Important Design Decisions
 
 1. Component Structure:
 
-   - `HomeCard.vue`: Displays the grid of album thumbnails
-   - `AlbumCard.vue`: Shows individual album photos
+   - `AlbumGrid.vue`: Displays the grid of album thumbnails on the home page
+   - `AlbumDetails.vue`: Shows individual album photos
    - `Loading.vue` and `NotFound.vue`: Handle loading states and 404 errors
 
 2. Routing:
@@ -71,3 +71,21 @@ This project utilizes Tailwind CSS for styling. Key customizations include:
    - Clear navigation with a "Go Back" button in individual album views
 
 This project demonstrates a modern, responsive web application using Vue 3, Nuxt 3, and Tailwind CSS, with a focus on maintainability and user experience.
+
+## Requirements fulfillment
+
+- Nuxt 3
+- Vue 3
+- Tailwind CSS
+- GraphQL
+- Apollo Client => Using @nuxtjs/apollo module instead of Apollo Client directly
+- State Management: In this implementation, we didn't need to use Vuex since the data is being fetched and displayed on the page as is.
+  - Explanation:
+    - I use the `useGetAlbums` and `useGetAlbum` composables to fetch the data from the API.
+    - The data is then passed to the components as props.
+    - The components use the data to display the albums and the photos.
+    - The photos are displayed in the `AlbumDetails` component.
+    - The `index.vue` (home page) component fetches the albums with a limit for photos and passes them to the `AlbumGrid` component.
+      - I prefer to use a limit for photos fetched since the number of photos in each album is very large.
+    - The individual album page component fetches the specific album and passes it to the `AlbumDetails` component.
+-

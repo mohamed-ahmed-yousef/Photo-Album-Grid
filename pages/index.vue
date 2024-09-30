@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watchEffect } from "vue";
-import { useGetAlbums } from "~/composables/album";
-import HomeCard from "~/pages/_components/HomeCard.vue";
+import { useGetAlbums } from "~/graphql/album";
+import HomeCard from "~/pages/_components/AlbumGrid.vue";
 import Loading from "~/pages/_components/Loading.vue";
 import NotFound from "~/pages/_components/NotFound.vue";
 
