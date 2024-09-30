@@ -1,75 +1,99 @@
-# Nuxt 3 Minimal Starter
+# Photo Album Grid Application
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Setup and Execution
 
-## Setup
+1. Clone the repository
+2. Install dependencies:
+   ```
+   pnpm install
+   ```
+3. Run the development server:
+   ```
+   pnpm run dev
+   ```
+4. Open your browser and navigate to `http://localhost:3000`
 
-Make sure to install the dependencies:
+## Key Features
 
-```bash
-# npm
-npm install
+- Responsive photo album grid
+- Individual album view
+- Vue 3 composition API
+- Nuxt 3 framework
+- GraphQL integration
 
-# pnpm
-pnpm install
+## Tailwind CSS Customizations
 
-# yarn
-yarn install
+This project utilizes Tailwind CSS for styling. Key customizations include:
 
-# bun
-bun install
-```
+1. Custom utility class:
 
-## Development Server
+   ```css
+   .page-container {
+     @apply container px-4;
+   }
+   ```
 
-Start the development server on `http://localhost:3000`:
+   This class is used to maintain consistent padding and container sizing across pages.
 
-```bash
-# npm
-npm run dev
+2. Responsive grid layouts:
 
-# pnpm
-pnpm run dev
+   - Home page: `sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`
+   - Album page: `sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`
 
-# yarn
-yarn dev
+3. Hover effects:
+   - Scale transform: `hover:scale-105`
+   - Background color change: `hover:bg-gray-700`
 
-# bun
-bun run dev
-```
+## Important Design Decisions
 
-## Production
+1. Component Structure:
 
-Build the application for production:
+   - `AlbumGrid.vue`: Displays the grid of album thumbnails on the home page
+   - `AlbumDetails.vue`: Shows individual album photos
+   - `Loading.vue` and `NotFound.vue`: Handle loading states and 404 errors
 
-```bash
-# npm
-npm run build
+2. Routing:
 
-# pnpm
-pnpm run build
+   - Dynamic routing for individual albums: `/albums/[id]`
 
-# yarn
-yarn build
+3. Data Fetching:
 
-# bun
-bun run build
-```
+   - Custom composables (`useGetAlbums` and `useGetAlbum`) for GraphQL queries
+   - Reactive data management using Vue 3's `ref` and `watchEffect`
 
-Locally preview production build:
+4. Responsive Design:
 
-```bash
-# npm
-npm run preview
+   - Mobile-first approach with progressive enhancement for larger screens
+   - Flexible grid system adapting to various screen sizes
 
-# pnpm
-pnpm run preview
+5. User Experience:
+   - Smooth transitions and hover effects for interactive elements
+   - Clear navigation with a "Go Back" button in individual album views
 
-# yarn
-yarn preview
+This project demonstrates a modern, responsive web application using Vue 3, Nuxt 3, and Tailwind CSS, with a focus on maintainability and user experience.
 
-# bun
-bun run preview
-```
+## Requirements fulfillment
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Nuxt 3
+- Vue 3
+- Tailwind CSS
+- GraphQL
+- Apollo Client => Using @nuxtjs/apollo module instead of Apollo Client directly
+- State Management: In this implementation, we didn't need to use Vuex since the data is being fetched and displayed on the page as is.
+  - Explanation:
+    - I use the `useGetAlbums` and `useGetAlbum` composables to fetch the data from the API.
+    - The data is then passed to the components as props.
+    - The components use the data to display the albums and the photos.
+    - The photos are displayed in the `AlbumDetails` component.
+    - The `index.vue` (home page) component fetches the albums with a limit for photos and passes them to the `AlbumGrid` component.
+      - I prefer to use a limit for photos fetched since the number of photos in each album is very large.
+    - The individual album page component fetches the specific album and passes it to the `AlbumDetails` component.
+
+## Code Quality
+
+- Pre-commit hooks:
+  - Biome: Used for code formatting and linting
+    - Configured to run automatically before commits
+    - Ensures consistent code style across the project
+  - Lefthook: Manages Git hooks
+    - Runs Biome checks before allowing commits
