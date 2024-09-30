@@ -22,6 +22,7 @@ defineProps<{
 </script>   
 
 <template>
+  <h1 class="mt-10 text-3xl text-center">Photo Album Grid</h1>
   <ul class="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid grid-cols-1 gap-6 py-10">
     <li v-for="album in data" :key="album.id" class="hover:scale-105 overflow-hidden transition-transform duration-300 bg-white rounded-lg shadow-md">
       <div v-if="album.photos && album.photos.data.length > 0" class="relative h-48">

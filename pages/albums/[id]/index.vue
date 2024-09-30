@@ -12,11 +12,14 @@ console.log(albumId.value, "from component");
 
 const { result, error, loading } = useGetAlbum(albumId);
 const album = ref(null);
+const title = ref(null);
 
 watchEffect(() => {
 	if (result.value?.album?.photos?.data) {
 		album.value = result.value.album.photos.data;
+		title.value = result.value.album.title;
 		console.log(album.value, "album");
+		console.log(title.value, "title");
 	}
 });
 </script>
@@ -27,8 +30,8 @@ watchEffect(() => {
         <Loading />
       </div>
       <p v-else-if="error">Error: {{ error.message }}</p>
-      <div v-else-if="album && album.length > 0" >
-        <AlbumCard :album="album" />
+      <div v-else-if="album && album.length > 0" class="my-10">
+        <AlbumCard :album="album" :title="title" />
       </div>
       <div v-else>
         <Loading />
