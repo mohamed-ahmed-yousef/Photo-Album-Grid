@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div class="flex flex-col items-center justify-center min-h-screen px-0 bg-gray-100">
       <h1 class="mb-4 text-6xl font-bold text-gray-800">404</h1>
       <p class="mb-8 text-xl text-gray-600">
         Oops! The page you're looking for doesn't exist.

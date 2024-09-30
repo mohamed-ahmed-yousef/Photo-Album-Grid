@@ -20,7 +20,6 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div>
     <div v-if="isLoading">
       <Loading />
     </div>
@@ -31,5 +30,4 @@ watchEffect(() => {
     <div v-else>
       <NotFound />
     </div>
-  </div>
 </template>

@@ -25,16 +25,14 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div>
-      <div v-if="loading">
+    <div v-if="loading">
         <Loading />
-      </div>
-      <p v-else-if="error">Error: {{ error.message }}</p>
-      <div v-else-if="album && album.length > 0" class="my-10">
-        <AlbumCard :album="album" :title="title" />
-      </div>
-      <div v-else>
-        <Loading />
-      </div>
-  </div>
+    </div>
+    <p v-else-if="error">Error: {{ error.message }}</p>
+    <div v-else-if="album && album.length > 0">
+    <AlbumCard :album="album" :title="title" />
+    </div>
+    <div v-else>
+    <NotFound />
+    </div>
 </template>

@@ -4,6 +4,6 @@
 
 @layer utilities {
   .page-container {
-    @apply container px-3;
+    @apply container px-4;
   }
 }

@@ -2,7 +2,7 @@
 import "../assets/css/main.css";
 </script>
 <template>
-  <div class="page-container">
+  <div >
     <slot />
   </div>
 </template>
