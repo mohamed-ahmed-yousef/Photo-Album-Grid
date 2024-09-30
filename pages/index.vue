@@ -1,5 +1,6 @@
 <script setup>
 import { useGetAlbums } from "~/composables/album";
+import NotFound from "~/pages/_components/NotFound.vue";
 
 const { result, error, loading } = useGetAlbums();
 const data = result.value?.albums?.data;
@@ -8,7 +9,6 @@ const isLoading = loading.value;
 
 <template>
   <div>
-    <h1 class="text-4xl">Albums</h1>
     <p v-if="isLoading">Loading albums...</p>
     <p v-else-if="error">Error: {{ error.message }}</p>
     <div v-else-if="data">
@@ -18,12 +18,14 @@ const isLoading = loading.value;
           <div v-if="album.photos && album.photos.data.length > 0">
             <img :src="album.photos.data[0].thumbnailUrl" :alt="album.photos.data[0].title">
           </div>
-          <NuxtLink :to="`/albums/${album.id}`" class="hover:underline text-blue-500">
+          <router-link :to="`/albums/${album.id}`" class="hover:underline text-blue-500">
             View more
-          </NuxtLink>
+          </router-link>
         </li>
       </ul>
     </div>
-    <p v-else>No albums found.</p>
+    <div v-else>
+      <NotFound />
+    </div>
   </div>
 </template>
