@@ -1,10 +1,11 @@
+// GraphQL Query for getting albums with paginated photos
 export const GET_ALBUMS = gql`
-  query getAlbums($page: Int, $limit: Int) {
-    albums(options: { paginate: { page: $page, limit: $limit } }) {
+  query {
+    albums {
       data {
         id
         title
-        photos {
+        photos(options: { paginate: { page: 1, limit: 1 } }) {
           data {
             id
             thumbnailUrl
@@ -16,6 +17,11 @@ export const GET_ALBUMS = gql`
     }
   }
 `;
+
+export function useGetAlbums() {
+	const { result, loading, error } = useQuery(GET_ALBUMS);
+	return { result, loading, error };
+}
 
 export const GET_ALBUM = gql`
   query getAlbum($id: ID!) {
@@ -33,3 +39,13 @@ export const GET_ALBUM = gql`
     }
   }
 `;
+
+export function useGetAlbum(id: string) {
+	if (!id) {
+		throw new Error("ID is required for fetching the album.");
+	}
+
+	const { result, loading, error } = useQuery(GET_ALBUM, { id });
+
+	return { result, loading, error };
+}
