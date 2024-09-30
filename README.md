@@ -88,4 +88,12 @@ This project demonstrates a modern, responsive web application using Vue 3, Nuxt
     - The `index.vue` (home page) component fetches the albums with a limit for photos and passes them to the `AlbumGrid` component.
       - I prefer to use a limit for photos fetched since the number of photos in each album is very large.
     - The individual album page component fetches the specific album and passes it to the `AlbumDetails` component.
--
+
+## Code Quality
+
+- Pre-commit hooks:
+  - Biome: Used for code formatting and linting
+    - Configured to run automatically before commits
+    - Ensures consistent code style across the project
+  - Lefthook: Manages Git hooks
+    - Runs Biome checks before allowing commits
