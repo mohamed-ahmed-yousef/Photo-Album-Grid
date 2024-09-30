@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 			autoprefixer: {},
 		},
 	},
-	modules: ["@nuxtjs/apollo"],
+	modules: ["@nuxtjs/apollo", "@nuxt/image"],
 	apollo: {
 		clients: {
 			default: {

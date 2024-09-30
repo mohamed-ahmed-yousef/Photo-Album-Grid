@@ -46,6 +46,5 @@ export function useGetAlbum(id: string) {
 	}
 
 	const { result, loading, error } = useQuery(GET_ALBUM, { id });
-
 	return { result, loading, error };
 }

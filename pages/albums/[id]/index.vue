@@ -3,6 +3,7 @@ import { ref, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import { useGetAlbum } from "~/graphql/album";
 import AlbumCard from "~/pages/_components/AlbumDetails.vue";
+import ErrorPage from "~/pages/_components/ErrorPage.vue";
 import Loading from "~/pages/_components/Loading.vue";
 import NotFound from "~/pages/_components/NotFound.vue";
 
@@ -28,8 +29,10 @@ watchEffect(() => {
     <div v-if="loading">
         <Loading />
     </div>
-    <p v-else-if="error">Error: {{ error.message }}</p>
-    <div v-else-if="album && album.length > 0">
+    <div v-else-if="error">
+        <ErrorPage />
+    </div>
+    <div v-else-if="album && album.length > 0" class="pb-10">
     <AlbumCard :album="album" :title="title" />
     </div>
     <div v-else>

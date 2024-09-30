@@ -20,6 +20,7 @@
 - Vue 3 composition API
 - Nuxt 3 framework
 - GraphQL integration
+- Optimized image loading with @nuxt/image
 
 ## Tailwind CSS Customizations
 
@@ -29,7 +30,7 @@ This project utilizes Tailwind CSS for styling. Key customizations include:
 
    ```css
    .page-container {
-     @apply container px-4;
+     @apply container px-4 mx-auto;
    }
    ```
 
@@ -50,7 +51,7 @@ This project utilizes Tailwind CSS for styling. Key customizations include:
 
    - `AlbumGrid.vue`: Displays the grid of album thumbnails on the home page
    - `AlbumDetails.vue`: Shows individual album photos
-   - `Loading.vue` and `NotFound.vue`: Handle loading states and 404 errors
+   - `Loading.vue`, `NotFound.vue`, and `ErrorPage.vue`: Handle loading states, 404 errors, and general errors
 
 2. Routing:
 
@@ -67,10 +68,14 @@ This project utilizes Tailwind CSS for styling. Key customizations include:
    - Flexible grid system adapting to various screen sizes
 
 5. User Experience:
+
    - Smooth transitions and hover effects for interactive elements
    - Clear navigation with a "Go Back" button in individual album views
 
-This project demonstrates a modern, responsive web application using Vue 3, Nuxt 3, and Tailwind CSS, with a focus on maintainability and user experience.
+6. Image Optimization:
+   - Utilizes @nuxt/image module for efficient image loading and optimization
+
+This project demonstrates a modern, responsive web application using Vue 3, Nuxt 3, and Tailwind CSS, with a focus on maintainability, performance, and user experience.
 
 ## Requirements fulfillment
 
@@ -78,22 +83,28 @@ This project demonstrates a modern, responsive web application using Vue 3, Nuxt
 - Vue 3
 - Tailwind CSS
 - GraphQL
-- Apollo Client => Using @nuxtjs/apollo module instead of Apollo Client directly
-- State Management: In this implementation, we didn't need to use Vuex since the data is being fetched and displayed on the page as is.
+- Apollo Client => Using @nuxtjs/apollo module
+- State Management: In this implementation, we didn't need to use Vuex or Pinia since the data is being fetched and displayed on the page as is.
   - Explanation:
-    - I use the `useGetAlbums` and `useGetAlbum` composables to fetch the data from the API.
-    - The data is then passed to the components as props.
-    - The components use the data to display the albums and the photos.
-    - The photos are displayed in the `AlbumDetails` component.
-    - The `index.vue` (home page) component fetches the albums with a limit for photos and passes them to the `AlbumGrid` component.
+    - The `useGetAlbums` and `useGetAlbum` composables fetch data from the API.
+    - Data is passed to components as props.
+    - Components use the data to display albums and photos.
+    - The `AlbumDetails` component displays individual album photos.
+    - The `index.vue` (home page) component fetches albums with a limit for photos and passes them to the `AlbumGrid` component.
       - I prefer to use a limit for photos fetched since the number of photos in each album is very large.
     - The individual album page component fetches the specific album and passes it to the `AlbumDetails` component.
 
 ## Code Quality
 
-- Pre-commit hooks:
-  - Biome: Used for code formatting and linting
-    - Configured to run automatically before commits
-    - Ensures consistent code style across the project
-  - Lefthook: Manages Git hooks
-    - Runs Biome checks before allowing commits
+- TypeScript: Implemented for improved type safety and developer experience
+- Nuxt DevTools: Enabled for enhanced debugging and development workflow
+- Modular structure: Components and pages are organized for better maintainability
+- Consistent code style: Ensured through project configuration
+
+## Performance Optimizations
+
+- Image optimization: Utilizing @nuxt/image for efficient image loading and processing
+- Lazy loading: Implemented for images to improve initial page load times
+- Responsive images: Using appropriate image sizes for different screen resolutions
+
+This project showcases a well-structured, performant, and user-friendly web application using modern web technologies and best practices.
